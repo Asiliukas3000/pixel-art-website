@@ -46,10 +46,6 @@ body
     margin: auto;
     text-align: center;
 }
-.pixel
-{
-    background-color: white;
-}
 .toolSelector ul
 {
     list-style: none;
@@ -101,4 +97,11 @@ body
 #eraser
 {
     background: radial-gradient(circle, rgba(255,235,243,1) 17%, rgb(231, 49, 49) 100%);
+}
+.pixel
+{
+    outline: rgba(0,0,0,0);
+    outline-offset: -1;
+    border-bottom: none;
+    border-left: none;
 }

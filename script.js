@@ -2,6 +2,20 @@ let size = 16;
 let board = document.getElementsByClassName("board")[0];
 let colour = "black";
 let drawing = false;
+let grid = false;
+
+let gridButton = document.getElementById("grid");
+gridButton.addEventListener("click",function()
+{
+    grid=!grid;
+    grid?gridButton.textContent="Grid On":gridButton.textContent="Grid Off";
+    for(let i =0;i<size**2;i++)
+    {
+        grid?
+            document.getElementsByClassName("pixel")[i].style.outline="solid black":
+            document.getElementsByClassName("pixel")[i].style.outline="rgba(0,0,0,0)";
+    }
+})
 
 
 
@@ -23,7 +37,6 @@ document.getElementById("color6").addEventListener("click",function(){colour="#F
 document.getElementById("color7").addEventListener("click",function(){colour="#36AE7C"});
 document.getElementById("color8").addEventListener("click",function(){colour="#187498"});
 
-
 updateCanvas();
 
 function updateCanvas()
@@ -32,6 +45,7 @@ function updateCanvas()
     for(let i =0;i<size**2;i++)
     {
         let pixel = document.createElement("div");
+        pixel.className="pixel";
         pixel.style.width=(512/size+"px");
         pixel.style.height=(512/size+"px");
         pixel.addEventListener("mouseenter",function()
